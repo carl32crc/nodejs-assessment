@@ -1,6 +1,6 @@
 'use strict'
 
-exports.ensureAuth = (req, res, next) => {
+const ensureAuth = (req, res, next) => {
     if (!req.headers.authorization) {
         return res.status(403).send({
             message: 'La peticion no tiene la cabecera de autenticacion'
@@ -20,3 +20,5 @@ exports.ensureAuth = (req, res, next) => {
     }
 
 }
+
+module.exports = ensureAuth

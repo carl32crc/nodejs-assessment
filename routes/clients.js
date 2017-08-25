@@ -1,11 +1,11 @@
 'user strict'
 
 const express = require('express')
-const clientsController = require('../controllers/clients')
+const getUser = require('../controllers/clients/get_user')
 
 const api = express.Router()
-const mdAuth = require('../middlewares/authenticated')
+const authenticated = require('../middlewares/authenticated')
 
-api.get('/user/:id',mdAuth.ensureAuth , clientsController.getUser )
+api.get('/user/:id', authenticated , getUser )
 
 module.exports = api

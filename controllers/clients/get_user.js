@@ -1,7 +1,7 @@
 'use strict'
 
 // services
-const getData = require('../service/get_data')
+const getData = require('../../service/get_data')
 
 const getUser = (req, res) => {
 
@@ -25,7 +25,4 @@ const getUser = (req, res) => {
  
 }
 
-
-module.exports = {
-    getUser
-}
+module.exports = getUser

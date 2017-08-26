@@ -1,5 +1,7 @@
 'use strict'
 
+const simulationUserLogged = require('../utils/simulationUserLogged.json')
+
 const ensureAuth = (req, res, next) => {
     
     if (!req.headers.authorization) {
@@ -13,11 +15,7 @@ const ensureAuth = (req, res, next) => {
         /* Simulation user athenticated with Role 'admin', 
         can change role 'admin' to 'user' */
 
-        req.user = {
-            name: 'Carl',
-            email: 'carl.45.cr@gmail.com',
-            role: 'admin'
-        }
+        req.simulationUserLogged = simulationUserLogged
 
         next()
     }

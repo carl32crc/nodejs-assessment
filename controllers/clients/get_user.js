@@ -2,14 +2,14 @@
 
 // services
 const getData = require('../../service/get_data')
+const getUrl = require('../../utils/urlApi.json')
 
 const getUser = (req, res) => {
 
     const param = req.params.name || req.params.id
-    const url = 'http://www.mocky.io/v2/5808862710000087232b75ac'
     let clients = []
  
-    getData('GET', url, true)
+    getData('GET', getUrl.urlClients, true)
     .then( data => {
 
         clients.push(data.clients.find(d => req.params.name ? 
@@ -21,7 +21,7 @@ const getUser = (req, res) => {
 
             res.status(200).send({
                 data: clients,
-                user: req.user
+                simulationUserLogged: req.simulationUserLogged
             })
 
         } else {

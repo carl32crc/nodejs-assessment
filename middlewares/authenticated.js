@@ -5,7 +5,7 @@ const ensureAuth = (req, res, next) => {
     if (!req.headers.authorization) {
 
         return res.status(403).send({
-            message: 'La peticion no tiene la cabecera de autenticacion'
+            message: 'The request does not have the authentication header'
         })
         
     } else {

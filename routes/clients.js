@@ -3,8 +3,7 @@
 const express = require('express')
 
 // controllers
-const getUserId = require('../controllers/clients/get_user_id')
-const getUserName = require('../controllers/clients/get_user_name')
+const getUser = require('../controllers/clients/get_user')
 
 const api = express.Router()
 
@@ -12,7 +11,7 @@ const api = express.Router()
 const authenticated = require('../middlewares/authenticated')
 const isAdmin = require('../middlewares/is_admin')
 
-api.get('/user-id/:id', [authenticated, isAdmin] , getUserId )
-api.get('/user-name/:name', authenticated , getUserName )
+api.get('/user-id/:id', authenticated , getUser )
+api.get('/user-name/:name', authenticated , getUser )
 
 module.exports = api

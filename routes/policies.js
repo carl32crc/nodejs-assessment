@@ -3,14 +3,14 @@
 const express = require('express')
 
 // controllers
-const getUser = require('../controllers/clients/get_user')
+const getPolicies = require('../controllers/policies/get_policies')
 
 const api = express.Router()
 
 // middlewares
 const authenticated = require('../middlewares/authenticated')
+const isAdmin = require('../middlewares/is_admin')
 
-api.get('/user-id/:id', authenticated , getUser )
-api.get('/user-name/:name', authenticated , getUser )
+api.get('/policies/:name', [authenticated, isAdmin] , getPolicies )
 
 module.exports = api

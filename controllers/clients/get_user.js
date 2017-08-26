@@ -8,7 +8,7 @@ const getUser = (req, res) => {
     const param = req.params.name || req.params.id
     const url = 'http://www.mocky.io/v2/5808862710000087232b75ac'
     let clients = []
-
+ 
     getData('GET', url, true)
     .then( data => {
 
@@ -30,8 +30,8 @@ const getUser = (req, res) => {
         
     })
     .catch( error => {  
-        res.status(200).send({
-            error: error,
+        res.status(500).send({
+            message: 'Fail request to server',
         })
     })
  

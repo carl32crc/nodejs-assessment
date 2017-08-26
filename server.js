@@ -4,8 +4,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
-// routes
+// import routes
 const routesClients = require('./routes/clients')
+const routesPolicies = require('./routes/policies')
 
 // Post from evironment variables or 3000 by default
 const port = process.env.PORT || 3000;
@@ -15,7 +16,7 @@ app.use( bodyParser.urlencoded( {extended:false} ) )
 
 // Base routes
 app.use('/api', routesClients);
-//app.use("/policy", policiesRoute);
+app.use('/api', routesPolicies);
 
 // Listen on port
 app.listen(port, () => {

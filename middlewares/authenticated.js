@@ -16,7 +16,7 @@ const ensureAuth = (req, res, next) => {
         req.user = {
             name: 'Carl',
             email: 'carl.45.cr@gmail.com',
-            role: 'user'
+            role: 'admin'
         }
 
         next()

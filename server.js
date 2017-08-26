@@ -1,7 +1,7 @@
 'use strict'
 
-const express = require("express");
-const bodyParser = require("body-parser");
+const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 
 // routes
@@ -14,7 +14,7 @@ const port = process.env.PORT || 3000;
 app.use( bodyParser.urlencoded( {extended:false} ) )
 
 // Base routes
-app.use("/api", routesClients);
+app.use('/api', routesClients);
 //app.use("/policy", policiesRoute);
 
 // Listen on port

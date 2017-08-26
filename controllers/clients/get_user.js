@@ -2,6 +2,8 @@
 
 // services
 const getData = require('../../service/get_data')
+
+// utils
 const getUrl = require('../../utils/urlApi.json')
 
 const getUser = (req, res) => {

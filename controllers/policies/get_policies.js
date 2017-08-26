@@ -2,6 +2,8 @@
 
 // services
 const getData = require('../../service/get_data')
+
+// utils
 const getUrl = require('../../utils/urlApi.json')
 
 const getPolicies = (req, res) => {
@@ -18,7 +20,7 @@ const getPolicies = (req, res) => {
     })
     .catch( error => {  
         res.status(500).send({
-            message: 'Fail request to server',
+            message: 'Fail request to server clients',
         })
     })
 
@@ -41,7 +43,7 @@ const getPolicies = (req, res) => {
     })
     .catch( error => {  
         res.status(500).send({
-            message: 'Fail request to server',
+            message: 'Fail request to server policies',
         })
     })
  

@@ -1,4 +1,4 @@
-# Github Api with VanillaJS/ES6
+# Api with VanillaJS/ES6
 ## Requirements
 * [NodeJS](https://nodejs.org/en/)
 

@@ -26,29 +26,27 @@ const getPolicy = (req, res) => {
 
       if (client) {
         res.status(200).send({
-          message: 'Success',
-          status: res.status,  
+          message: 'Success',  
           data: client,
           simulationUserLogged: req.simulationUserLogged
         })
       } else {
         res.status(404).send({ 
-          message: 'Not have assigned a client.',
-          status: res.status 
+          message: 'Not have assigned a client.' 
         })
       }
 
-    }).catch( error => {  
+    })
+    .catch( error => {  
       res.status(500).send({
-        message: 'Fail request to server clients',
-        status: res.status 
+        message: 'Fail request to server clients'
       })
     })
 
-  }).catch( error => {  
+  })
+  .catch( error => {  
     res.status(500).send({
-      message: 'Fail request to server policies',
-      status: res.status 
+      message: 'Fail request to server policies' 
     })
   })
 }

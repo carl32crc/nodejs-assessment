@@ -19,22 +19,20 @@ const getUser = (req, res) => {
     
     if (clients[0]) {
       res.status(200).send({
-        message: 'Success',
-        status: res.status,  
+        message: 'Success',  
         data: clients,
         simulationUserLogged: req.simulationUserLogged
       })
     } else {
       res.status(404).send({ 
-        message: `This client doesn't exist.`,
-        status: res.status
+        message: `This client doesn't exist.`
       })
     }
      
-  }).catch( error => {  
+  })
+  .catch( error => {  
     res.status(500).send({
-      message: 'Fail request to server',
-      status: res.status
+      message: 'Fail request to server'
     })
   })
  

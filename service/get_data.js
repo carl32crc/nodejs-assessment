@@ -12,9 +12,12 @@ const getData = (method, url) => {
     xhr.responseType = 'json'
     xhr.addEventListener('load', () => {
 
-      const data = xhr.response
-      resolve(data)
+      const status = xhr.status
 
+      if (xhr.status === 200) {
+        const data = xhr.response
+        resolve(data)
+      }
     }, false)
 
     xhr.send()

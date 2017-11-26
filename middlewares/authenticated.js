@@ -1,24 +1,24 @@
 'use strict'
 
-const simulationUserLogged = require('../utils/simulationUserLogged.json')
+const simulationUserLogged = require('../resources/simulationUserLogged.json')
 
 const ensureAuth = (req, res, next) => {
     
-    if (!req.headers.authorization) {
+  if (!req.headers.authorization) {
 
-        return res.status(403).send({
-            message: 'The request does not have the authentication header'
-        })
-        
-    } else {
+    return res.status(403).send({
+        message: 'The request does not have the authentication header'
+    })
+    
+  } else {
 
-        /* Simulation user athenticated with Role 'admin', 
-        can change role 'admin' to 'user' */
+    /* Simulation user athenticated with Role 'admin', 
+    can change role 'admin' to 'user' */
 
-        req.simulationUserLogged = simulationUserLogged
+    req.simulationUserLogged = simulationUserLogged
 
-        next()
-    }
+    next()
+  }
 
 }
 

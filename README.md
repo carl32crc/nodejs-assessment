@@ -16,7 +16,7 @@ Have default value 'true' in Authentication header for simulation user logged.
 Can change role 'admin' to 'user' in file:
 
 ```
- ./utils/simulationUserLogged.json  
+ ./resources/simulationUserLogged.json  
 ```
 
 ## Routes of api
